@@ -86,7 +86,7 @@ void pop_top(stacknodes_t **stack, unsigned int line_number)
 
 void print_top(stacknodes_t **stack, unsigned int line_number)
 {
-	if (!stack || !*stack)
+	if (stack == NULL|| *stack == NULL)
 		handle_more_error(6, line_number);
 	printf("%d\n", (*stack)->n);
 }
