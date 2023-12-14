@@ -11,7 +11,7 @@
   * Return: None
   */
 
-void print_char(StackNode_t **stack, unsigned int line_number)
+void print_char(stacknode_t **stack, unsigned int line_number)
 {
 	int ascii;
 
@@ -33,10 +33,10 @@ void print_char(StackNode_t **stack, unsigned int line_number)
   * Return: None
   */
 
-void print_str(StackNode_t **stack, __attribute__((unused))unsigned int line_number)
+void print_str(stacknode_t **stack, __attribute__((unused))unsigned int line_number)
 {
 	int ascii;
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!stack || !*stack)
 	{
@@ -65,9 +65,9 @@ void print_str(StackNode_t **stack, __attribute__((unused))unsigned int line_num
   * Return: None
   */
 
-void rotate_left(StackNode_t **stack, __attribute__((unused))unsigned int line_number)
+void rotate_left(stacknode_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		return;
@@ -92,9 +92,9 @@ void rotate_left(StackNode_t **stack, __attribute__((unused))unsigned int line_n
   * Return: None
   */
 
-void rotate_right(StackNode_t **stack, __attribute__((unused))unsigned int line_number)
+void rotate_right(stacknode_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		return;
