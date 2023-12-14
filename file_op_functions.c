@@ -142,7 +142,7 @@ void find_function(char *opcode, char *value, int line_number, int parsing_forma
 
 void call_function(op_function func, char *op, char *value, int line_number, int parsing_format)
 {
-	StackNode_t *node;
+	stacknode_t *node;
 	int flag = 1;
 	int i = 0;
 
