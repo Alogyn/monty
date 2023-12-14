@@ -1,8 +1,7 @@
 #include "monty.h"
 
 /**
-  * sub_nodes - Subtracts the top element from the second top element of
-  * the stack
+  * sub_nodes - Subtracts the top element from the second top element of the stack
   *
   * @stack: Pointer to a pointer pointing to the top node of the stack
   * @line_number: Integer representing the line number of the opcode
@@ -10,7 +9,7 @@
   * Return: None
   */
 
-void sub_nodes(StackNode_t **stack, unsigned int line_number)
+void sub_nodes(stacknode_t **stack, unsigned int line_number)
 {
 	int difference;
 
@@ -35,7 +34,7 @@ void sub_nodes(StackNode_t **stack, unsigned int line_number)
   * Return: None
   */
 
-void div_nodes(StackNode_t **stack, unsigned int line_number)
+void div_nodes(stacknode_t **stack, unsigned int line_number)
 {
 	int quotient;
 
@@ -52,17 +51,16 @@ void div_nodes(StackNode_t **stack, unsigned int line_number)
 }
 
 /**
-  * swap_nodes - Swaps the top two elements of the stacking
-  *
+  * swap_nodes - Swaps the top two elements of the stack
   * @stack: Pointer to a pointer pointing to the top node of the stack
-  * @line_number: Integer representing the line number of the opcode
+  * @lineNumber: Integer representing the line number of the opcode
   *
   * Return: None
   */
 
-void swap_nodes(StackNode_t **stack, unsigned int line_number)
+void swap_nodes(stacknode_t **stack, unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!stack || !*stack || (*stack)->next == NULL)
 		handle_more_error(8, line_number, "swap");
