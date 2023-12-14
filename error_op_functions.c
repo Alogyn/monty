@@ -5,8 +5,8 @@
 /**
   * handle_error - Prints appropriate error messages based on error code
   *
-  * @errorCode: The error codes are the following:
-  * (1) => The user does not give any file or more than one file to the program
+  * @error_code: The error codes are the following:
+  * (1) => The user do not give any file or more than one file to the program
   * (2) => The file provided is not a file that can be opened or read
   * (3) => The file provided contains an invalid instruction
   * (4) => When the program is unable to malloc more memory
@@ -55,7 +55,7 @@ void handle_error(int error_code, ...)
 /**
   * handle_more_error - Handles errors
   *
-  * @errorCode: The error codes are the following:
+  * @error_code: The error codes are the following:
   * (6) => When the stack is empty for pint
   * (7) => When the stack is empty for pop
   * (8) => When the stack is too short for the operation
@@ -100,7 +100,7 @@ void handle_more_error(int error_code, ...)
 /**
   * handle_str_error - Handles errors
   *
-  * @errorCode: The error codes are the following:
+  * @error_code: The error codes are the following:
   * (10) ~> The number inside a node is outside ASCII bounds
   * (11) ~> The stack is empty
   *
