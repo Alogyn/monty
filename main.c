@@ -2,7 +2,7 @@
 
 /* Main functions */
 
-StackNode_t *head = NULL;
+stacknode_t *head = NULL;
 
 /**
   * main - Entry point
@@ -33,11 +33,11 @@ int main(int argc, char *argv[])
   * Return: Upon sucess a pointer to the node. Otherwise NULL
   */
 
-StackNode_t *create_node(int n)
+stacknode_t *create_node(int n)
 {
-	StackNode_t *node;
+	stacknode_t *node;
 
-	node = malloc(sizeof(StackNode_t));
+	node = malloc(sizeof(stacknode_t));
 	if (!node)
 		handle_error(4);
 	node->next = NULL;
@@ -54,7 +54,7 @@ StackNode_t *create_node(int n)
 
 void free_nodes(void)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!head)
 		return;
@@ -77,10 +77,9 @@ void free_nodes(void)
   * Return: None
   */
 
-void add_to_queue(StackNode_t **new_node, __attribute__((unused))
-		unsigned int line_number)
+void add_to_queue(stacknode_t **new_node, __attribute__((unused))unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!new_node || !*new_node)
 		exit(EXIT_FAILURE);
