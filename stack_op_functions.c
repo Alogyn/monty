@@ -11,9 +11,9 @@
   * Return: None
   */
 
-void add_to_stack(StackNode_t **new_node, __attribute__((unused))unsigned int line_number)
+void add_to_stack(stacknode_t **new_node, __attribute__((unused))unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!new_node || !*new_node)
 		exit(EXIT_FAILURE);
@@ -37,9 +37,9 @@ void add_to_stack(StackNode_t **new_node, __attribute__((unused))unsigned int li
   * Return: None
   */
 
-void print_stack(StackNode_t **stack, unsigned int line_number)
+void print_stack(stacknode_t **stack, unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	(void) line_number;
 	if (!stack)
@@ -61,9 +61,9 @@ void print_stack(StackNode_t **stack, unsigned int line_number)
   * Return: None
   */
 
-void pop_top(StackNode_t **stack, unsigned int line_number)
+void pop_top(stacknode_t **stack, unsigned int line_number)
 {
-	StackNode_t *tmp;
+	stacknode_t *tmp;
 
 	if (!stack || !*stack)
 		handle_more_error(7, line_number);
@@ -84,7 +84,7 @@ void pop_top(StackNode_t **stack, unsigned int line_number)
   * Return: None
   */
 
-void print_top(StackNode_t **stack, unsigned int line_number)
+void print_top(stacknode_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack)
 		handle_more_error(6, line_number);
@@ -100,7 +100,7 @@ void print_top(StackNode_t **stack, unsigned int line_number)
   * Return: None
   */
 
-void nop(StackNode_t **stack, unsigned int line_number)
+void nop(stacknode_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
