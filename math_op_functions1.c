@@ -24,7 +24,8 @@ void multiply_nodes(StackNode_t **stack, unsigned int line_number)
 }
 
 /**
-  * mod_nudes - Computes the rest of the division of the second top element of the stack by the top element of the stack
+  * mod_nodes - Computes the rest of the division of the second top element of
+  * the stack by the top element of the stack
   *
   * @stack: Pointer to a pointer pointing to the top node of the stack
   * @line_number: Integer representing the line number of the opcode
@@ -54,7 +55,7 @@ void mod_nodes(StackNode_t **stack, unsigned int line_number)
   * add_nodes - Adds the top two elements of the stack
   *
   * @stack: Pointer to a pointer pointing to the top node of the stack
-  * @line_umber: Integer representing the line number of the opcode
+  * @line_number: Integer representing the line number of the opcode
   *
   * Return: None
   */
