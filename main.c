@@ -77,7 +77,8 @@ void free_nodes(void)
   * Return: None
   */
 
-void add_to_queue(StackNode_t **new_node, __attribute__((unused))unsigned int line_number)
+void add_to_queue(StackNode_t **new_node, __attribute__((unused))
+		unsigned int line_number)
 {
 	StackNode_t *tmp;
 
