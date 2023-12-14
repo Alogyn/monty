@@ -1,17 +1,12 @@
 #include "monty.h"
-
-/* Main functions */
-
-stacknodes_t *head = NULL;
+stack_t *head = NULL;
 
 /**
-  * main - Entry point
-  *
-  * @argc: Arguments count
-  * @argv: List of arguments
-  *
-  * Return: Always 0 (Succes)
-  */
+ * main - entry point
+ * @argc: arguments count
+ * @argv: list of arguments
+ * Return: always 0
+ */
 
 int main(int argc, char *argv[])
 {
@@ -20,26 +15,23 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	open_read_file(argv[1]);
+	open_file(argv[1]);
 	free_nodes();
 	return (0);
 }
 
 /**
-  * create_node - Creates a node
-  *
-  * @n: Number to go inside the node
-  *
-  * Return: Upon sucess a pointer to the node. Otherwise NULL
-  */
-
-stacknodes_t *create_node(int n)
+ * create_node - Creates a node.
+ * @n: Number to go inside the node.
+ * Return: Upon sucess a pointer to the node. Otherwise NULL.
+ */
+stack_t *create_node(int n)
 {
-	stacknodes_t *node;
+	stack_t *node;
 
-	node = malloc(sizeof(stacknodes_t));
-	if (!node)
-		handle_error(4);
+	node = malloc(sizeof(stack_t));
+	if (node == NULL)
+		err(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = n;
@@ -47,19 +39,16 @@ stacknodes_t *create_node(int n)
 }
 
 /**
-  * free_nodes - Frees nodes in the stack
-  *
-  * Return: None
-  */
-
+ * free_nodes - Frees nodes in the stack.
+ */
 void free_nodes(void)
 {
-	stacknodes_t *tmp;
+	stack_t *tmp;
 
-	if (!head)
+	if (head == NULL)
 		return;
 
-	while (head)
+	while (head != NULL)
 	{
 		tmp = head;
 		head = head->next;
@@ -69,21 +58,17 @@ void free_nodes(void)
 
 
 /**
-  * add_to_queue - Adds a node to the queue
-  *
-  * @new_node: Pointer to the new node
-  * @line_number: line number of the opcode
-  *
-  * Return: None
-  */
-
-void add_to_queue(stacknodes_t **new_node, __attribute__((unused))unsigned int line_number)
+ * add_to_queue - Adds a node to the queue.
+ * @new_node: Pointer to the new node.
+ * @ln: line number of the opcode.
+ */
+void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
-	stacknodes_t *tmp;
+	stack_t *tmp;
 
-	if (!new_node || !*new_node)
+	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
-	if (!head)
+	if (head == NULL)
 	{
 		head = *new_node;
 		return;
